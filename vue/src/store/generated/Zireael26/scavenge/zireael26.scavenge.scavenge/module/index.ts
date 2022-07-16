@@ -4,10 +4,12 @@ import { StdFee } from "@cosmjs/launchpad";
 import { SigningStargateClient } from "@cosmjs/stargate";
 import { Registry, OfflineSigner, EncodeObject, DirectSecp256k1HdWallet } from "@cosmjs/proto-signing";
 import { Api } from "./rest";
+import { MsgCommitSolution } from "./types/scavenge/tx";
 import { MsgSubmitScavenge } from "./types/scavenge/tx";
 
 
 const types = [
+  ["/zireael26.scavenge.scavenge.MsgCommitSolution", MsgCommitSolution],
   ["/zireael26.scavenge.scavenge.MsgSubmitScavenge", MsgSubmitScavenge],
   
 ];
@@ -41,6 +43,7 @@ const txClient = async (wallet: OfflineSigner, { addr: addr }: TxClientOptions =
 
   return {
     signAndBroadcast: (msgs: EncodeObject[], { fee, memo }: SignAndBroadcastOptions = {fee: defaultFee, memo: ""}) => client.signAndBroadcast(address, msgs, fee,memo),
+    msgCommitSolution: (data: MsgCommitSolution): EncodeObject => ({ typeUrl: "/zireael26.scavenge.scavenge.MsgCommitSolution", value: MsgCommitSolution.fromPartial( data ) }),
     msgSubmitScavenge: (data: MsgSubmitScavenge): EncodeObject => ({ typeUrl: "/zireael26.scavenge.scavenge.MsgSubmitScavenge", value: MsgSubmitScavenge.fromPartial( data ) }),
     
   };
