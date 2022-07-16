@@ -1,0 +1,12 @@
+syntax = "proto3";
+package zireael26.scavenge.scavenge;
+
+import "gogoproto/gogo.proto";
+
+option go_package = "github.com/Zireael26/scavenge/x/scavenge/types";
+
+// Params defines the parameters for the module.
+message Params {
+  option (gogoproto.goproto_stringer) = false;
+  
+}
