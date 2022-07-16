@@ -51921,6 +51921,8 @@ definitions:
       number of blocks
   zireael26.scavenge.scavenge.MsgCommitSolutionResponse:
     type: object
+  zireael26.scavenge.scavenge.MsgRevealSolutionResponse:
+    type: object
   zireael26.scavenge.scavenge.MsgSubmitScavengeResponse:
     type: object
   zireael26.scavenge.scavenge.Params:
