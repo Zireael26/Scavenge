@@ -4,6 +4,7 @@ package zireael26.scavenge.scavenge;
 import "gogoproto/gogo.proto";
 import "scavenge/params.proto";
 import "scavenge/scavenge.proto";
+import "scavenge/commit.proto";
 // this line is used by starport scaffolding # genesis/proto/import
 
 option go_package = "github.com/Zireael26/scavenge/x/scavenge/types";
@@ -12,5 +13,6 @@ option go_package = "github.com/Zireael26/scavenge/x/scavenge/types";
 message GenesisState {
   Params params = 1 [(gogoproto.nullable) = false];
   repeated Scavenge scavengeList = 2 [(gogoproto.nullable) = false];
+  repeated Commit commitList = 3 [(gogoproto.nullable) = false];
   // this line is used by starport scaffolding # genesis/proto/state
 }

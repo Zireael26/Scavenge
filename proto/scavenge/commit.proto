@@ -1,0 +1,12 @@
+syntax = "proto3";
+package zireael26.scavenge.scavenge;
+
+option go_package = "github.com/Zireael26/scavenge/x/scavenge/types";
+
+message Commit {
+  string index = 1; 
+  string solutionHash = 2; 
+  string solutionScavengerHash = 3; 
+  
+}
+
